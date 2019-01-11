@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--<bean id = "helloWorld1" class="spring.HelloWorld">-->
+        <!--<property name = "message" value = "Hello World!"/>-->
+    <!--</bean>-->
+
+    <bean id = "adrs" class="Address.Address">
+        <property name = "city" value = "bengaluru"/>
+        <property name = "state" value = "karnataka"/>
+        <property name = "zipCode" value = "560068"/>
+    </bean>
+
+    <bean id = "emp1" class="employee.Employee" init-method="myInit" destroy-method="myDestroy">
+        <property name = "eid" value = "102"/>
+        <property name = "ename" value = "ashwin"/>
+        <!--<property name = "eaddress" value = "bangalore"/>-->
+
+        <!--Dependency Injection-->
+
+        <!--<constructor-arg ref="adrs"/>-->
+        <property name="address" ref="adrs"></property>
+    </bean>
+
+    <!--<bean id = "emp2" class="employee.Employee">-->
+        <!--<property name = "eid" value = "103"/>-->
+        <!--<property name = "ename" value = "sagir"/>-->
+        <!--<property name = "eaddress" value = "kolkata"/>-->
+    <!--</bean>-->
+
+</beans>
